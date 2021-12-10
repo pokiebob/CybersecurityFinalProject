@@ -8,7 +8,7 @@ message = 'I finally finished all my math homework.'
 # im.save('lsb_grumpycat.jpg')
 
 def encodeImg(src, message):
-	img = Image.open(src, 'r')
+	img = Image.open(src, 'r').convert('RGB')
 	width, height  = img.size
 	imgData = np.array(list(img.getdata()))
 	print(img.mode)
@@ -19,12 +19,24 @@ def encodeImg(src, message):
 
 	ba = bitarray.bitarray()
 	ba.frombytes(message.encode('utf-8'))
-	print(len(ba))
+	requiredPixels = len(ba)
 
-	if len(ba) > totalPixels:
+	if requiredPixels > totalPixels:
 		print("Error: message too long")
 	else:
-		a = int(bin(imgData[1][1])[2:9] + int(ba[0]), 2)
-		print(a)
+		mCounter = 0
+		for row in range(totalPixels):
+			for col in range(0, 3):
+				if mCounter < requiredPixels:
+					imgData[row][col] = int(bin(imgData[row][col])[2:9] + str(int(ba[mCounter])), 2)
+					mCounter += 1
+		# print(imgData)
 
-encodeImg('grumpycat.jpg', message)
+		newImgData = imgData.reshape(height, width, 3)
+		newImg = Image.fromarray(newImgData.astype('uint8'), img.mode)
+		newImg.save('lsb_grumpycat.png')
+		print('yay')
+
+
+
+encodeImg('grumpycat.png', message)
