@@ -2,21 +2,20 @@ import bitarray
 import numpy as np
 from PIL import Image
 
-message = 'I finally finished all my math homework.'
-
 # im = Image.open('grumpycat.jpg')
 # im.save('lsb_grumpycat.jpg')
 
-def encodeImg(src, message):
+def encodeImg(src, message, key):
 	img = Image.open(src, 'r').convert('RGB')
 	width, height  = img.size
 	imgData = np.array(list(img.getdata()))
-	print(img.mode)
-	print(imgData)
+	# print(img.mode)
+	# print(imgData)
 
 	totalPixels = imgData.size // 3
-	print(totalPixels)
+	# print(totalPixels)
 
+	message += key
 	ba = bitarray.bitarray()
 	ba.frombytes(message.encode('utf-8'))
 	requiredPixels = len(ba)
@@ -37,6 +36,37 @@ def encodeImg(src, message):
 		newImg.save('lsb_grumpycat.png')
 		print('yay')
 
+def decodeImg(src, key):
 
+    img = Image.open(src, 'r')
+    array = np.array(list(img.getdata()))
 
-encodeImg('grumpycat.png', message)
+    if img.mode == 'RGB':
+        n = 3
+    elif img.mode == 'RGBA':
+        n = 4
+    total_pixels = array.size//n
+
+    hidden_bits = ""
+    for p in range(total_pixels):
+        for q in range(0, 3):
+            hidden_bits += (bin(array[p][q])[2:][-1])
+
+    hidden_bits = [hidden_bits[i:i+8] for i in range(0, len(hidden_bits), 8)]
+
+    message = ""
+    for i in range(len(hidden_bits)):
+	    if message[-1 * len(key):] == key:
+	        break
+	    else:
+	        message += chr(int(hidden_bits[i], 2))
+    if key in message:
+        print("Hidden Message:", message[:-1 * len(key)])
+    else:
+        print("No Hidden Message Found")
+
+key = "sjae89j89k9k90grjkd9gjs89"
+message = "I finally finished all my math homework."
+encodeImg('grumpycat.png', message, key)
+#Encode('grumpycat.png', message, 'lsb_grumpycat.png')
+decodeImg('lsb_grumpycat.png', key)
