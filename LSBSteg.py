@@ -2,9 +2,6 @@ import bitarray
 import numpy as np
 from PIL import Image
 
-# im = Image.open('grumpycat.jpg')
-# im.save('lsb_grumpycat.jpg')
-
 def encodeImg(src, location, message, key):
 	img = Image.open(src, 'r').convert('RGB')
 	width, height  = img.size
@@ -67,8 +64,8 @@ def decodeImg(src, key):
 
 key = "sjae89j89k9k90grjkd9gjs89"
 message = "I finally finished all my math homework."
-encodeImg('grumpycat.jpg', 'lsb_grumpycat.jpg', message, key)
-decodeImg('lsb_grumpycat.jpg', key)
+# encodeImg('grumpycat.jpg', 'lsb_grumpycat.jpg', message, key)
+# decodeImg('lsb_grumpycat.jpg', key)
 
 encodeImg('grumpycat.png', 'lsb_grumpycat.png', message, key)
 decodeImg('lsb_grumpycat.png', key)
