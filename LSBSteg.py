@@ -5,7 +5,7 @@ from PIL import Image
 # im = Image.open('grumpycat.jpg')
 # im.save('lsb_grumpycat.jpg')
 
-def encodeImg(src, message, key):
+def encodeImg(src, location, message, key):
 	img = Image.open(src, 'r').convert('RGB')
 	width, height  = img.size
 	imgData = np.array(list(img.getdata()))
@@ -33,7 +33,7 @@ def encodeImg(src, message, key):
 
 		newImgData = imgData.reshape(height, width, 3)
 		newImg = Image.fromarray(newImgData.astype('uint8'), img.mode)
-		newImg.save('lsb_grumpycat.png')
+		newImg.save(location)
 		print('yay')
 
 def decodeImg(src, key):
@@ -67,6 +67,8 @@ def decodeImg(src, key):
 
 key = "sjae89j89k9k90grjkd9gjs89"
 message = "I finally finished all my math homework."
-encodeImg('grumpycat.png', message, key)
-#Encode('grumpycat.png', message, 'lsb_grumpycat.png')
+encodeImg('grumpycat.jpg', 'lsb_grumpycat.jpg', message, key)
+decodeImg('lsb_grumpycat.jpg', key)
+
+encodeImg('grumpycat.png', 'lsb_grumpycat.png', message, key)
 decodeImg('lsb_grumpycat.png', key)
