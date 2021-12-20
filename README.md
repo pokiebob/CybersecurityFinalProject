@@ -11,4 +11,5 @@
 - 12/16
 	- Researched different methods of text/image steg, looking into email steg
 	- https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.206.5320&rep=rep1&type=pdf
-
+- 12/20
+	- Researched email steg with (spammimic + https://github.com/strib/scipher )
