@@ -20,11 +20,12 @@ def encode(src, message, key):
 		mCounter = 0
 		for bixel in range(totalBixels):
 			if mCounter < requiredBixels:
-				emailData[bixel] = int(emailData[bixel].to01()[2:9] + str(int(ba[mCounter])), 2)
+				# print(emailData[bixel])
+				emailData[bixel] = bitarray.bitarray(emailData[bixel].to01()[1:9] + str(int(ba[mCounter])))
 				mCounter += 1
 		s = ""
-		for i in range(len(emailData)):
-			print(bitarray.bitarray(emailData[i]).tobytes())
+		for i in emailData:
+			s += i.tobytes().decode('utf-8', 'ignore')
 
 		print(s)
 
