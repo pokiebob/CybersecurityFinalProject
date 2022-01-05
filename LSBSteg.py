@@ -7,7 +7,7 @@ def encodeImg(src, location, message, key):
 	width, height  = img.size
 	imgData = np.array(list(img.getdata()))
 	# print(img.mode)
-	# print(imgData)
+	print(imgData)
 
 	totalPixels = imgData.size // 3
 	# print(totalPixels)
