@@ -45,7 +45,7 @@ def encode(source, message):
 	email_array.insert(i, "0")
 	#print(email_array)
 	
-	f = open("encoded.txt", "w")
+	f = open("encoded.txt", "w", encoding="utf-8")
 	counter = 0
 	for x in email_array:
 		if (x == "0"):
