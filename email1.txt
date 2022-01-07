@@ -18,7 +18,6 @@ Below you will find guidance on next steps that will help keep you, your child, 
 What Happens Now?
 
 ●      Students and staff who are considered close contacts of the individual who tested positive have been notified of the need to quarantine for 10 days from their last contact with the person who tested positive. These students and staff will transition to fully remote teaching and learning for this period.
-
 ●      T2 and DOHMH will complete their investigation to identify and notify any other close contacts in the building, who will also need to quarantine for 10 days.
 ●      Any staff or students who are fully vaccinated OR students who were recently (within the past three months) diagnosed with COVID-19 and finished isolation in the past 90 days will NOT need to quarantine as long as they have no COVID-19 symptoms. People who are fully vaccinated have received both shots of a two shot regimen or one shot of a single shot regimen and 14 days or more have elapsed since their last shot.
 ●      Unvaccinated students and staff who are considered close contacts may test out of quarantine in order to return to their classrooms on the eighth day of quarantine. In order to do so, students should take a COVID-19 test on their fifth day of quarantine in order to re-enter class on the eighth day. Students must submit proof of a negative test through the COVID-19 Vaccination Portal, or by submitting the result to the school on paper or electronically.
@@ -30,7 +29,7 @@ How do we stay healthy?
 
 All New Yorkers age 5 or older are eligible to be vaccinated for COVID-19. If someone is fully vaccinated, they do not have to miss school, sports or work if there is a case in their classroom. People who are between 5 and 17 years old are eligible for the Pfizer vaccine only; all older ages are eligible for all three vaccines. Find a vaccine site today at https://vaccinefinder.nyc.gov/. There is no cost to be vaccinated.
 
-Please remember to follow these important “Core Four” actions to prevent COVID-19 transmission:  
+Please remember to follow these important "Core Four" actions to prevent COVID-19 transmission:  
 
 Stay home if sick (except to get essential medical care, including COVID-19 testing).
 Practice social distancing: Stay at least 6 feet away from people who are not members of your household.
@@ -38,7 +37,7 @@ Wear a face covering to reduce the spread of COVID-19.
 Practice healthy hand hygiene: Wash your hands often or use an alcohol-based hand sanitizer; avoid touching your face; and cover your cough or sneeze with your arm, not your hands.
 How can I stay updated?
 
-We will continue to closely follow directions from public health experts and proactively update you on any measures we are taking. To ensure we can reach you via text and email, please create a New York City Schools Account (NYCSA) as soon as possible by visiting schools.nyc.gov/nycsa.
+We will continue to closely follow directions from public health experts and proactively update you on any measures we are taking. To ensure we can reach you via text and email, please create a New York City Schools Account (NYCSA) as soon as possible by visiting schools.nyc.gov/nycsa.
 
 To help New Yorkers quarantine, the NYC Test + Trace Corps partners with community-based organizations to connect individuals to resources like food, medicine, and health care.  To connect with resources, you can call 1-212-COVID19 (212-268-4319).
 

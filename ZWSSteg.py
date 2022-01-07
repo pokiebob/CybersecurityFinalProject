@@ -1,3 +1,5 @@
+import sys
+
 def to_byte_array(s):
 	s_bytearray = bytearray(s, "utf8")
 	s_array = []
@@ -41,23 +43,24 @@ def encode(source, message):
 			i += 1
 		i += 1
 	email_array.insert(i, "0")
-
-
 	#print(email_array)
 	
 	f = open("encoded.txt", "w")
 	counter = 0
 	for x in email_array:
 		if (x == "0"):
-			f.write(u'\u200b\u200b')
+			f.write(u'\u200D\u200D')
 			#f.write('!!')
-		if (x == "1"):
-			f.write(u'\u200b')
+		elif (x == "1"):
+			f.write(u'\u200D')
 			#f.write('!')
+		elif (x == '0b11100010' or x == '0b10010111' or x == '0b10001111'):
+			if (x == '0b11100010'):
+				f.write(u'\u25CF')
 		else:
 			f.write(to_char(x))
 	f.close()
-	print("Encoded message!")
+	print("Encoded successfully!")
 
 #01100001
 #zws = '0b11100010', '0b10000000', '0b10001011'
@@ -67,12 +70,11 @@ def decode(source):
 	email = f.read()
 	email_array = to_byte_array(email)
 
-	#print(email_array)
-
+	#'0b11100010', '0b10000000', '0b10001101'
 	while('0b10000000' in email_array):
 		email_array.remove("0b10000000")
-	while('0b10001011' in email_array):
-		email_array.remove("0b10001011")
+	while('0b10001101' in email_array):
+		email_array.remove("0b10001101")
 	#print(email_array)
 
 	message_array = []
@@ -109,15 +111,20 @@ def decode(source):
 		print(to_char(x), end="")
 	print()
 
-			
-#hu!h!uhuhu!huhu
-#hu���h���uhuhu���huhu
 
+if (len(sys.argv) < 3):
+	print("Usage: python3 ZWSSteg.py encode text_file message or python3 ZWSSteg.py decode text_file")
+elif (sys.argv[1] == 'encode'):
+	if (len(sys.argv) < 4):
+		print("Error: Encoding requires three arguments.")
+	else:
+		encode(sys.argv[2], sys.argv[3])
+elif (sys.argv[1] == 'decode'):
+	decode(sys.argv[2])
 
-#De!ar !Stu!yv!esant C!o!mmu!n!ity!,!
-#
-#!T!h!e! l!e!t!te!r !be!l!ow! !i!s j!u!st !a no!tificat!i!on of! a! confir!m!ed c!a!se!(!s) of! C!O!V!ID!-19.! Additi!o!n!a!l f!ol!l!owup !an!d! !a!cti!on steps will
+#n = len(sys.argv)
+#print("Total arguments passed:", n)
+ 
 
-message = "I found a cat yay"
-encode('email1.txt', message)
-decode('encoded.txt')
+#email1.txt
+#message = "I found a cat yay"
