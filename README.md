@@ -19,3 +19,11 @@ Project Slides: https://docs.google.com/presentation/d/1HFDdIysgH8YeHLizU82x5cN4
 	- Researched email steg with (spammimic + https://github.com/strib/scipher )
 - 12/21
 	- Started trying to code email steg file by determining distribution of message
+- 1/5/22
+	- Worked on encrypting message into email using bitarray
+	- Converted to readable text characters
+- 1/6/22
+	- Created successful encode and decode with normal text characters, used ZWS strategy to avoid grammar issues
+- 1/7/22
+	- Fixed issues with special characters
+	- Added multiple email selections
