@@ -1,5 +1,9 @@
 # STEG PROJECT
 
+Names: Cyrus Cursetjee & Helen Zhu
+
+Project Slides: https://docs.google.com/presentation/d/1HFDdIysgH8YeHLizU82x5cN4xFbMDNF7WNvi6vpfkv8/edit?usp=sharing
+
 ## Daily Log
 
 - 12/14
